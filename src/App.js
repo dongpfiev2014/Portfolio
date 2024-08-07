@@ -8,7 +8,6 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <h3>Hello everyone. I'm Dong !!</h3>
         <p>Thanks for scrolling</p>
-        <p>Thanks for scrolling</p>
       </header>
     </div>
   );
