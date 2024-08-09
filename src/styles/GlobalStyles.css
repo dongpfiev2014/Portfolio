@@ -4,13 +4,14 @@
   box-sizing: border-box;
   font-family: "Source Sans 3", sans-serif;
   font-optical-sizing: auto;
+  overflow-x: hidden;
 }
 
 .container {
   background-color: rgb(255, 255, 255);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
 }
 
 .box {
@@ -19,4 +20,151 @@
   padding: 20px;
   width: 400px;
   height: 400px;
+  overflow-y: hidden;
+}
+
+@media (min-width: 1801px) {
+  .box {
+    width: 400px;
+    height: 400px;
+  }
+  .box1 {
+    margin-left: 10%;
+  }
+
+  .box3 {
+    margin-right: 10%;
+  }
+  .tagSkill {
+    font-size: 15px;
+  }
+}
+@media (min-width: 1601px) and (max-width: 1800px) {
+  .box {
+    width: 400px;
+    height: 400px;
+  }
+  .box1 {
+    margin-left: 8%;
+  }
+  .box3 {
+    margin-right: 8%;
+  }
+  .tagSkill {
+    font-size: 15px;
+  }
+}
+@media (min-width: 1401px) and (max-width: 1600px) {
+  .box {
+    width: 350px;
+    height: 350px;
+  }
+  .box1 {
+    margin-left: 8%;
+  }
+  .box3 {
+    margin-right: 8.5%;
+  }
+  .tagSkill {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 1351px) and (max-width: 1400px) {
+  .box {
+    width: 330px;
+    height: 330px;
+  }
+  .box1 {
+    margin-left: 8%;
+  }
+  .box3 {
+    margin-right: 8.5%;
+  }
+  .tagSkill {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 1301px) and (max-width: 1350px) {
+  .box {
+    width: 330px;
+    height: 330px;
+  }
+  .box1 {
+    margin-left: 8%;
+  }
+  .box3 {
+    margin-right: 8%;
+  }
+  .tagSkill {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 1251px) and (max-width: 1300px) {
+  .box {
+    width: 330px;
+    height: 330px;
+  }
+  .box1 {
+    margin-left: 7%;
+  }
+  .box3 {
+    margin-right: 7.5%;
+  }
+  .tagSkill {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 1201px) and (max-width: 1250px) {
+  .box {
+    width: 330px;
+    height: 330px;
+  }
+  .box1 {
+    margin-left: 5%;
+  }
+  .box3 {
+    margin-right: 5%;
+  }
+  .tagSkill {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .box {
+    width: 300px;
+    height: 300px;
+  }
+  .tagSkill {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 576px) {
+  h3 {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 375px) {
+  .averageBox {
+    width: 275px !important;
+    height: auto !important;
+    top: 50% !important;
+  }
+  * {
+    font-size: 10px !important;
+  }
+  .thumbnailProject {
+    width: 50px !important;
+    height: 30px !important;
+  }
+  .descriptionProject {
+    width: 18px !important;
+    height: 18px !important;
+  }
 }
