@@ -424,7 +424,11 @@ function App() {
                             overflow: "hidden",
                           }}
                         />
-                        <Space direction="vertical" style={{ width: "100%" }}>
+                        <Space
+                          direction="vertical"
+                          align="center"
+                          style={{ width: "100%" }}
+                        >
                           <Typography.Paragraph
                             style={{ fontSize: screens.xs ? 12 : 14 }}
                           >
@@ -453,7 +457,7 @@ function App() {
                       preview={false}
                       style={{
                         width: screens.xxl ? "100px" : "70px",
-                        height: screens.xxl ? "70" : "50px",
+                        height: screens.xxl ? "70px" : "50px",
                         borderRadius: "5px",
                         objectFit: "cover",
                         overflow: "hidden",
