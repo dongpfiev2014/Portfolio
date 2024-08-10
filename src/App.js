@@ -14,6 +14,7 @@ import {
   Image,
   Typography,
   Carousel,
+  message,
 } from "antd";
 import "./App.css";
 import "./styles/GlobalStyles.css";
@@ -49,6 +50,8 @@ import { RiNextjsFill } from "react-icons/ri";
 import { GiPositionMarker } from "react-icons/gi";
 import SmartHome from "./assets/SmartHome.png";
 import WorkManagement from "./assets/WorkManagement.png";
+import { FcRight, FcLeft } from "react-icons/fc";
+import axios from "axios";
 
 // import ChirpConnect from "./assets";
 
@@ -66,12 +69,31 @@ function App() {
       .validateFields()
       .then((values) => {
         console.log("Received values from form: ", values);
+        handleSendEmail(values);
         form.resetFields();
         setIsModalVisible(false);
       })
       .catch((info) => {
         console.log("Validate Failed:", info);
       });
+  };
+
+  const handleSendEmail = async (values) => {
+    try {
+      const response = await axios.post(
+        "https://work-management-express.onrender.com/api/v1/message/portfolio",
+        values
+      );
+      console.log("Success:", response.data);
+      message.success(
+        "Your message has been sent successfully! I will get back to you as soon as possible."
+      );
+    } catch (error) {
+      console.log("Error:", error);
+      message.error(
+        "There was an error sending your message. Please try again."
+      );
+    }
   };
 
   const handleCancel = () => {
@@ -575,74 +597,85 @@ function App() {
                 {projectsBox}
               </>
             ) : (
-              <Carousel arrows infinite={true} autoplay autoplaySpeed={4000}>
-                {profileBox}
-                {technologiesBox}
-                {projectsBox}
-              </Carousel>
+              <>
+                <Flex vertical justify="center">
+                  <Carousel
+                    arrows
+                    infinite={true}
+                    autoplay
+                    autoplaySpeed={4000}
+                    nextArrow={<FcRight />}
+                    prevArrow={<FcLeft />}
+                  >
+                    {profileBox}
+                    {technologiesBox}
+                    {projectsBox}
+                  </Carousel>
+                </Flex>
+              </>
             )}
           </div>
         </div>
-
-        <ConfigProvider
-          theme={{
-            token: {
-              colorBgBase: "#dfd2c7",
-            },
-          }}
-        >
-          <Modal
-            title="Contact Me"
-            visible={isModalVisible}
-            onOk={handleOk}
-            onCancel={handleCancel}
-            okText="Send"
-          >
-            <ConfigProvider
-              theme={{
-                token: {
-                  colorBgBase: "#f0f0f0",
-                },
-              }}
-            >
-              <Form form={form} layout="vertical">
-                <Form.Item
-                  name="name"
-                  label="Your Name: "
-                  rules={[
-                    { required: true, message: "Please input your name!" },
-                  ]}
-                >
-                  <Input placeholder="Your Name.." />
-                </Form.Item>
-                <Form.Item
-                  name="email"
-                  label="Email Address: "
-                  rules={[
-                    {
-                      required: true,
-                      type: "email",
-                      message: "Please input a valid email!",
-                    },
-                  ]}
-                >
-                  <Input placeholder="user@example.com" />
-                </Form.Item>
-                <Form.Item
-                  name="message"
-                  label="Message: "
-                  rules={[
-                    { required: true, message: "Please input your message!" },
-                  ]}
-                >
-                  <Input.TextArea rows={4} placeholder="Your message..." />
-                </Form.Item>
-                Best Regards !!
-              </Form>
-            </ConfigProvider>
-          </Modal>
-        </ConfigProvider>
       </div>
+      <ConfigProvider
+        theme={{
+          token: {
+            colorBgBase: "#dfd2c7",
+          },
+        }}
+      >
+        <Modal
+          title="Contact Me"
+          visible={isModalVisible}
+          onOk={handleOk}
+          onCancel={handleCancel}
+          okText="Send"
+        >
+          <ConfigProvider
+            theme={{
+              token: {
+                colorBgBase: "#f0f0f0",
+              },
+            }}
+          >
+            <Form form={form} layout="vertical">
+              <Form.Item
+                name="name"
+                label="Your Name: "
+                rules={[{ required: true, message: "Please input your name!" }]}
+                className="formItem"
+              >
+                <Input placeholder="Your Name.." />
+              </Form.Item>
+              <Form.Item
+                name="email"
+                label="Email Address: "
+                rules={[
+                  {
+                    required: true,
+                    type: "email",
+                    message: "Please input a valid email!",
+                  },
+                ]}
+                className="formItem"
+              >
+                <Input placeholder="user@example.com" />
+              </Form.Item>
+              <Form.Item
+                name="message"
+                label="Message: "
+                rules={[
+                  { required: true, message: "Please input your message!" },
+                ]}
+                className="formItem"
+              >
+                <Input.TextArea rows={4} placeholder="Your message..." />
+              </Form.Item>
+              Best Regards !!
+            </Form>
+          </ConfigProvider>
+        </Modal>
+      </ConfigProvider>
     </>
   );
 }
