@@ -68,13 +68,13 @@ function App() {
     form
       .validateFields()
       .then((values) => {
-        console.log("Received values from form: ", values);
+        // console.log("Received values from form: ", values);
         handleSendEmail(values);
         form.resetFields();
         setIsModalVisible(false);
       })
       .catch((info) => {
-        console.log("Validate Failed:", info);
+        // console.log("Validate Failed:", info);
       });
   };
 
@@ -84,12 +84,12 @@ function App() {
         "https://work-management-express.onrender.com/api/v1/message/portfolio",
         values
       );
-      console.log("Success:", response.data);
+      // console.log("Success:", response.data);
       message.success(
         "Your message has been sent successfully! I will get back to you as soon as possible."
       );
     } catch (error) {
-      console.log("Error:", error);
+      // console.log("Error:", error);
       message.error(
         "There was an error sending your message. Please try again."
       );
@@ -410,7 +410,7 @@ function App() {
           renderItem={(item, index) => (
             <List.Item style={{ cursor: "pointer" }}>
               <Popover
-                placement={screens.xl ? "left" : "top"}
+                placement={screens.xl ? "leftBottom" : "top"}
                 title={item.title}
                 content={
                   <>
