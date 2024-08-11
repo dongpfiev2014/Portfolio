@@ -30,6 +30,7 @@ import {
   FaWhatsapp,
   FaEnvelope,
   FaDocker,
+  FaAws,
 } from "react-icons/fa";
 import {
   DiReact,
@@ -45,6 +46,7 @@ import {
   SiExpress,
   SiSocketdotio,
   SiCplusplus,
+  SiMicrosoftazure,
 } from "react-icons/si";
 import { RiNextjsFill } from "react-icons/ri";
 import { GiPositionMarker } from "react-icons/gi";
@@ -244,6 +246,8 @@ function App() {
   const technologies = [
     { name: "Typescript", icon: <SiTypescript /> },
     { name: "Nest.js", icon: <SiNestjs /> },
+    { name: "Docker", icon: <FaDocker /> },
+    { name: "AWS", icon: <FaAws /> },
     { name: "Express.js", icon: <SiExpress /> },
     { name: "Node.js", icon: <DiNodejs /> },
     { name: "React", icon: <DiReact /> },
@@ -251,9 +255,9 @@ function App() {
     { name: "JavaScript", icon: <DiJavascript1 /> },
     { name: "Socket.IO", icon: <SiSocketdotio /> },
     { name: "MongoDB", icon: <DiMongodb /> },
+    { name: "Azure", icon: <SiMicrosoftazure /> },
     { name: "MS SQL", icon: <DiMsqlServer /> },
     { name: "Linux", icon: <DiLinux /> },
-    { name: "Docker", icon: <FaDocker /> },
     { name: "C++", icon: <SiCplusplus /> },
   ];
 
