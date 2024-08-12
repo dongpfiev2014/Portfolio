@@ -82,7 +82,7 @@ function App() {
 
   const handleSendEmail = async (values) => {
     try {
-      const response = await axios.post(
+      await axios.post(
         "https://work-management-express.onrender.com/api/v1/message/portfolio",
         values
       );
