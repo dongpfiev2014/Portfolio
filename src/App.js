@@ -52,6 +52,7 @@ import { RiNextjsFill } from "react-icons/ri";
 import { GiPositionMarker } from "react-icons/gi";
 import SmartHome from "./assets/SmartHome.png";
 import WorkManagement from "./assets/WorkManagement.png";
+import ChirpConnect from "./assets/chirpconnect.png";
 import { FcRight, FcLeft } from "react-icons/fc";
 import axios from "axios";
 
@@ -266,8 +267,8 @@ function App() {
       title: "ChirpConnect - Social Network",
       description:
         "ChirpConnect is a social networking platform featuring tweet management, likes, follows, retweets, search, real-time notifications, messaging, group chats & profile management.",
-      url: "https://example.com/project1",
-      thumbnail: "https://via.placeholder.com/150",
+      url: "https://chirpconnect.fun",
+      thumbnail: ChirpConnect,
     },
     {
       title: "Work Management",
